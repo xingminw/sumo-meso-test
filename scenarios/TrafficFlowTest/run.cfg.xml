@@ -62,7 +62,7 @@
     </report>
 
     <mesoscopic>
-        <mesosim value="false"/>
+        <mesosim value="true"/>
         <meso-edgelength value="50"/>
         <meso-tauff value="1.45"/>
         <meso-taufj value="1.45"/>
@@ -72,8 +72,8 @@
         <meso-multi-queue value="true"/>
         <meso-lane-queue value="true"/>
         <meso-junction-control value="true"/>
-        <meso-tls-penalty value="0.5"/>
-        <meso-minor-penalty value="3"/>
+<!--        <meso-tls-penalty value="0"/>-->
+<!--        <meso-minor-penalty value="3"/>-->
         <meso-overtaking value="true"/>
     </mesoscopic>
 
