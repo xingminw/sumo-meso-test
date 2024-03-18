@@ -1,0 +1,4 @@
+﻿<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <vType id="DEFAULT_VEHTYPE" minGap="1.5" length="5"/>
+    <edgeData id="dump_10" freq="3" file="edge_data_SFO.xml" excludeEmpty="true"/>
+</additional>

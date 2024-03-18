@@ -1,0 +1,24 @@
+﻿<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <vType id="DEFAULT_VEHTYPE" minGap="1.5" length="5"/>
+    <edgeData id="dump_10" freq="30" file="edge_data_SFO.xml" excludeEmpty="true"/>
+
+<!--    <rerouter id="test_close_0" edges="E1" probability="0">-->
+<!--        <interval begin="1800" end="7200">-->
+<!--           <closingLaneReroute id="E3_0"/>-->
+<!--        </interval>-->
+<!--        <interval begin="1800" end="7200">-->
+<!--           <closingLaneReroute id="E3_1"/>-->
+<!--        </interval>-->
+<!--    </rerouter>-->
+
+<!--    <variableSpeedSign id="test_var_speed_0" lanes="E9_0">-->
+<!--        <step time="0" speed="-1"/>-->
+<!--        <step time="0" speed="7"/>-->
+<!--        <step time="5000" speed="-1"/>-->
+<!--    </variableSpeedSign>-->
+<!--    <variableSpeedSign id="test_var_speed_0" lanes="E5_0">-->
+<!--        <step time="0" speed="-1"/>-->
+<!--        <step time="300" speed="0"/>-->
+<!--        <step time="5000" speed="-1"/>-->
+<!--    </variableSpeedSign>-->
+</additional>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2022-10-27 13:44:46 by Eclipse SUMO sumo Version 1.14.1
+-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="SFO.net.xml"/>
+        <route-files value="test.rou.xml"/>
+        <additional-files value="additional.add.xml,reroute.xml"/>
+    </input>
+
+    <output>
+        <output-prefix value="../../outputs/Rhombus/"/>
+        <summary-output value="stats.xml"/>
+        <tripinfo-output.write-unfinished value="true"/>
+        <tripinfo-output value="trips_SFO.xml"/>
+        <vehroute-output value="routes_SFO.xml"/>
+        <vehroute-output.route-length value="true"/>
+        <vehroute-output.last-route value="true"/>
+        <vehroute-output.write-unfinished value="true"/>
+        <vehroute-output.exit-times value="true"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <routing-algorithm value="CH"/>
+        <weights.random-factor value="1.7"/>
+        <device.rerouting.probability value="1.0"/>
+        <device.rerouting.period value="30"/>
+        <device.rerouting.pre-period value="0"/>
+        <device.rerouting.adaptation-steps value="30"/>
+        <device.rerouting.adaptation-interval value="30"/>
+        <device.rerouting.with-taz value="false"/>
+        <device.rerouting.threads value="6"/>
+        <device.rerouting.synchronize value="true"/>
+    </routing>
+
+    <mesoscopic>
+        <mesosim value="true"/>
+        <meso-edgelength value="20"/>
+        <meso-tauff value="1.45"/>
+        <meso-taufj value="1.45"/>
+        <meso-taujf value="1.45"/>
+        <meso-taujj value="1.45"/>
+        <meso-jam-threshold value="-0.9"/>
+        <meso-multi-queue value="true"/>
+        <meso-lane-queue value="true"/>
+        <meso-junction-control value="true"/>
+        <meso-tls-penalty value="0.5"/>
+        <meso-minor-penalty value="3"/>
+        <meso-overtaking value="true"/>
+    </mesoscopic>
+
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
