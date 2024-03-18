@@ -3,18 +3,18 @@
 -->
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
     <input>
-        <net-file value="SFO.net.xml"/>
+        <net-file value="trafficFlow.net.xml"/>
         <route-files value="trafficFlow.rou.xml"/>
-        <additional-files value="additional.add.xml,reroute.xml"/>
+        <additional-files value="additional.add.xml"/>
     </input>
 
     <output>
-        <output-prefix value="../../outputs/trafficFlowTest/"/>
+        <output-prefix value="../../outputs/TrafficFlowTest/"/>
         <summary-output value="stats.xml"/>
         <tripinfo-output.write-unfinished value="true"/>
         <tripinfo-output.write-undeparted value="true"/>
-        <tripinfo-output value="trips_SFO.xml"/>
-        <vehroute-output value="routes_SFO.xml"/>
+        <tripinfo-output value="trips.xml"/>
+        <vehroute-output value="routes.xml"/>
         <vehroute-output.route-length value="true"/>
         <vehroute-output.last-route value="true"/>
         <vehroute-output.write-unfinished value="true"/>
@@ -32,7 +32,7 @@
         <ignore-junction-blocker value="1"/>
         <ignore-route-errors value="true"/>
         <collision.action value="none"/>
-        <scale value="0.85"/>
+        <scale value="1"/>
         <time-to-teleport value="360"/>
         <max-depart-delay value="1200"/>
         <random-depart-offset value="1200"/>
@@ -85,6 +85,5 @@
     <gui_only>
         <tracker-interval value="2"/>
     </gui_only>
-
 
 </configuration>

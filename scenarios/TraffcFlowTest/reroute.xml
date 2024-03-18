@@ -1,8 +1,0 @@
-<rerouter id="test_close_0" edges="E1" probability="0">
-<!--    <interval begin="1800" end="7200">-->
-<!--       <closingLaneReroute id="E3_0"/>-->
-<!--    </interval>-->
-<!--    <interval begin="1800" end="7200">-->
-<!--       <closingLaneReroute id="E3_1"/>-->
-<!--    </interval>-->
-</rerouter>

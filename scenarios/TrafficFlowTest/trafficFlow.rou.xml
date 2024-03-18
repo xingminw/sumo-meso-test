@@ -6,8 +6,8 @@
     <!-- Routes -->
 
     <!-- Vehicles -->
-    <flow id="v_0" begin="0" end="3600" type="DEFAULT_VEHTYPE" vehsPerHour="6000" departLane="best" departSpeed="max"
-          from="E0" to="E1"/>
+    <flow id="v_0" begin="0" end="3600" type="DEFAULT_VEHTYPE" vehsPerHour="2400" departLane="best" departSpeed="max"
+          from="E0" to="E2"/>
 <!--    <flow id="v_1" begin="3600" end="7200" type="DEFAULT_VEHTYPE" vehsPerHour="6000" departLane="best" departSpeed="max"-->
 <!--          from="E0" to="E1"/>-->
 <!--    <flow id="v_2" begin="7200" end="10800" type="DEFAULT_VEHTYPE" vehsPerHour="400" departLane="best" departSpeed="max"-->

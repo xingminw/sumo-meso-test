@@ -6,7 +6,7 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="SFO.net.xml"/>
+        <net-file value="rhombus.net.xml"/>
         <route-files value="test.rou.xml"/>
         <additional-files value="additional.add.xml,reroute.xml"/>
     </input>
@@ -15,8 +15,8 @@
         <output-prefix value="../../outputs/Rhombus/"/>
         <summary-output value="stats.xml"/>
         <tripinfo-output.write-unfinished value="true"/>
-        <tripinfo-output value="trips_SFO.xml"/>
-        <vehroute-output value="routes_SFO.xml"/>
+        <tripinfo-output value="trips.xml"/>
+        <vehroute-output value="routes.xml"/>
         <vehroute-output.route-length value="true"/>
         <vehroute-output.last-route value="true"/>
         <vehroute-output.write-unfinished value="true"/>
@@ -56,11 +56,14 @@
         <meso-overtaking value="true"/>
     </mesoscopic>
 
-
     <report>
         <verbose value="true"/>
         <duration-log.statistics value="true"/>
         <no-step-log value="true"/>
     </report>
+
+    <gui_only>
+        <tracker-interval value="2"/>
+    </gui_only>
 
 </configuration>
