@@ -4,12 +4,9 @@
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <!-- Routes -->
+    <route id="r_0" edges="E0 E2"/>
 
     <!-- Vehicles -->
-    <flow id="v_0" begin="0" end="3600" type="DEFAULT_VEHTYPE" vehsPerHour="2400" departLane="best" departSpeed="max"
-          from="E0" to="E2"/>
-<!--    <flow id="v_1" begin="3600" end="7200" type="DEFAULT_VEHTYPE" vehsPerHour="6000" departLane="best" departSpeed="max"-->
-<!--          from="E0" to="E1"/>-->
-<!--    <flow id="v_2" begin="7200" end="10800" type="DEFAULT_VEHTYPE" vehsPerHour="400" departLane="best" departSpeed="max"-->
-<!--          from="E0" to="E1"/>-->
+    <flow id="v_0" begin="0" end="3600" type="DEFAULT_VEHTYPE" vehsPerHour="1800" departLane="best" departSpeed="max"
+          route="r_0"/>
 </routes>

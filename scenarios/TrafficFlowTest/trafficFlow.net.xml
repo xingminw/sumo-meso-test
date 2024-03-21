@@ -55,8 +55,8 @@
 
     <tlLogic id="J1" type="static" programID="0" offset="0">
         <phase duration="80" state="GGG"/>
-        <phase duration="5"  state="yyy"/>
-        <phase duration="35" state="rrr"/>
+<!--        <phase duration="5"  state="yyy"/>-->
+<!--        <phase duration="35" state="rrr"/>-->
     </tlLogic>
 
     <junction id="J0" type="dead_end" x="-371.90" y="66.01" incLanes="" intLanes="" shape="-371.90,66.01 -371.92,56.41"/>

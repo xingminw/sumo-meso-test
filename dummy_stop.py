@@ -18,6 +18,7 @@ timestep = 0
 vehicle_ts_dict = {}
 deleted_vehicles, inserted_vehicles = [], []
 
+
 while traci.simulation.getMinExpectedNumber() > 0:  # Continue while there are active vehicles
     if timestep >= 500:
         break
@@ -48,26 +49,6 @@ while traci.simulation.getMinExpectedNumber() > 0:  # Continue while there are a
             # fixme: 518.66 is the length of the edge E0
             vehicle_ts_dict[vehicle_id]["distance"].append(vehicle_edge_dis + 518.66)
 
-        # # move the vehicle test (-- does not work for meso --)
-        # if timestep - vehicle_ts_dict[vehicle_id]["time"][0] == 10:
-        #     traci.vehicle.moveTo(vehicle_id, vehicle_lane_id, vehicle_edge_dis + 150)
-
-        # # delete and reinsert vehicles
-        # if vehicle_edge == "E0" and vehicle_edge_dis > 200:
-        #     if vehicle_id not in inserted_vehicles:
-        #         deleted_vehicles.append(vehicle_id)
-        #         traci.vehicle.remove(vehicle_id)
-        #
-        #         insert_veh_id = vehicle_id + "-0"
-        #         traci.vehicle.add(insert_veh_id, route_id,
-        #                           typeID=vehicle_type, depart="now",
-        #                           departLane="best",
-        #                           departPos=vehicle_edge_dis + 200,
-        #                           departSpeed=vehicle_speed)
-        #         inserted_vehicles.append(insert_veh_id)
-
-        # set vehicle to stop and resume (-- does not work for meso --)
-
         # if timestep == 275 and stop_lane_count < 1:
         #     # traci.vehicle.slowDown(vehicle_id, 0, 10)
         #     if vehicle_edge_dis <= 200 and vehicle_edge == "E0":
@@ -80,21 +61,40 @@ while traci.simulation.getMinExpectedNumber() > 0:  # Continue while there are a
         #         print(f"Lane {stop_lane_index} is set as stop for vehicle {vehicle_id}")
         #         stop_lane_count += 1
 
-    # disallow lane usage test
-    if timestep == 250:
-        traci.lane.setMaxSpeed("E2_0", 0)
-        traci.lane.setMaxSpeed("E2_1", 0)
-        traci.lane.setMaxSpeed("E2_2", 0)
-        # traci.edge.setMaxSpeed("E2", 0)
-    if timestep == 300:
-        traci.lane.setMaxSpeed("E2_0", 20)
-        traci.lane.setMaxSpeed("E2_1", 20)
-        traci.lane.setMaxSpeed("E2_2", 20)
-        # traci.edge.setMaxSpeed("E2", 20)
+    if timestep == 275:
+        traci.vehicle.add("E0_dummy_stop_01", "r_0",
+                          typeID="DEFAULT_VEHTYPE", depart="now",
+                          departPos=200,  departSpeed=0,
+                          departLane="best")
+        inserted_vehicles.append("E0_dummy_stop_01")
+        traci.vehicle.setStop("E0_dummy_stop_01", "E0",
+                              laneIndex=0, pos=200, duration=60)
+
+        traci.vehicle.add("E0_dummy_stop_02", "r_0",
+                          typeID="DEFAULT_VEHTYPE", depart="now",
+                          departPos=200, departSpeed=0,
+                          departLane="best")
+        inserted_vehicles.append("E0_dummy_stop_02")
+        traci.vehicle.setStop("E0_dummy_stop_02", "E0",
+                              laneIndex=1, pos=200, duration=60)
+
+        traci.vehicle.add("E0_dummy_stop_03", "r_0",
+                          typeID="DEFAULT_VEHTYPE", depart="now",
+                          departPos=200, departSpeed=0,
+                          departLane="best")
+        inserted_vehicles.append("E0_dummy_stop_03")
+        traci.vehicle.setStop("E0_dummy_stop_03", "E0",
+                              laneIndex=2, pos=200, duration=60)
+
+    if timestep == 350:
+        traci.vehicle.remove("E0_dummy_stop_01")
+        traci.vehicle.remove("E0_dummy_stop_02")
+        traci.vehicle.remove("E0_dummy_stop_03")
 
     # Advance the simulation time by a small time step
     timestep += 1
     traci.simulationStep()
+
 
 plt.figure(figsize=(10, 5))
 for vehicle_id in vehicle_ts_dict.keys():

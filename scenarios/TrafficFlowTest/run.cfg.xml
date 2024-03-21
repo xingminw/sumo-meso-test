@@ -63,12 +63,12 @@
 
     <mesoscopic>
         <mesosim value="true"/>
-        <meso-edgelength value="50"/>
-        <meso-tauff value="1.45"/>
-        <meso-taufj value="1.45"/>
-        <meso-taujf value="1.45"/>
-        <meso-taujj value="1.45"/>
-        <meso-jam-threshold value="-0.9"/>
+        <meso-edgelength value="30"/>
+<!--        <meso-tauff value="1.45"/>-->
+<!--        <meso-taufj value="1.45"/>-->
+<!--        <meso-taujf value="1.45"/>-->
+<!--        <meso-taujj value="1.45"/>-->
+<!--        <meso-jam-threshold value="-0.9"/>-->
         <meso-multi-queue value="true"/>
         <meso-lane-queue value="true"/>
         <meso-junction-control value="true"/>
