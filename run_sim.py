@@ -83,18 +83,25 @@ while traci.simulation.getMinExpectedNumber() > 0:  # Continue while there are a
     # disallow lane usage test
     if timestep == 250:
         traci.lane.setMaxSpeed("E2_0", 0)
-        traci.lane.setMaxSpeed("E2_1", 0)
-        traci.lane.setMaxSpeed("E2_2", 0)
+        # for vehicle_id in vehicle_ids:
+        #     if traci.vehicle.getRoadID(vehicle_id) == "E2":
+        #         traci.vehicle.remove(vehicle_id)
+        #         deleted_vehicles.append(vehicle_id)
+
+        # traci.lane.setMaxSpeed("E2_1", 0)
+        # traci.lane.setMaxSpeed("E2_2", 20)
         # traci.edge.setMaxSpeed("E2", 0)
     if timestep == 300:
-        traci.lane.setMaxSpeed("E2_0", 20)
-        traci.lane.setMaxSpeed("E2_1", 20)
-        traci.lane.setMaxSpeed("E2_2", 20)
+        # traci.lane.setMaxSpeed("E2_0", 20)
+        # traci.lane.setMaxSpeed("E2_1", 20)
+        # traci.lane.setMaxSpeed("E2_2", 20)
         # traci.edge.setMaxSpeed("E2", 20)
+        pass
 
     # Advance the simulation time by a small time step
     timestep += 1
     traci.simulationStep()
+
 
 plt.figure(figsize=(10, 5))
 for vehicle_id in vehicle_ts_dict.keys():
@@ -108,7 +115,9 @@ for vehicle_id in vehicle_ts_dict.keys():
              vehicle_ts_dict[vehicle_id]["distance"],
              ".-", alpha=alpha, color=color)
 
-plt.xlim([200, 400])
+plt.axvline(250, color="r", linestyle="--")
+plt.axhline(518.66, color="b", linestyle="--")
+plt.xlim([200, 500])
 plt.grid()
 plt.xlabel("Time (s)")
 plt.ylabel("Distance (m)")
